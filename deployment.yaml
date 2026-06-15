@@ -1,0 +1,58 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: test123
+  name: test123
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: test123
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: test123
+    spec:
+      containers:
+      - image: ngind:latest
+        name: ngind
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: test123
+  name: test123
+spec:
+  ports:apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: test123
+  name: test123
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: test123
+status:
+  loadBalancer: {}
+
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: test123
+status:
+  loadBalancer: {}
